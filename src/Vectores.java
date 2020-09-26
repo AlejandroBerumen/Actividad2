@@ -73,7 +73,7 @@ class VectorEspecial{
 			aux[i] = edades[i]; 
 		}
 		for (int i = 0; i < edades.length; i++) {
-			edades[i] = aux[edades.length-(i-1)]; 
+			edades[i] = aux[edades.length-(i+1)]; 
 		}
 	}
 	
