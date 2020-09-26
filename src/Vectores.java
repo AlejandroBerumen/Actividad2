@@ -38,8 +38,28 @@ class VectorEspecial{
 	public void mostrarElementoFinal() {
 		System.out.println(edades[obtenerFinal()]);
 	}
-	public void aumentarArray() {
-		
+	public void cambiarTamanio(int nuevoTamanio) {
+		int aux[] = new int[edades.length];
+		for (int i = 0; i < edades.length; i++) {
+			aux[i] = edades[i]; 
+		}
+		if(nuevoTamanio==edades.length) {
+			System.out.println("El nuevo tamaño no puede ser igual al tamaño actual");
+		}else if(nuevoTamanio>edades.length) {
+			edades = new int[nuevoTamanio];
+			for (int i = 0; i < aux.length; i++) {
+				edades[i] = aux[i];
+			}
+			System.out.println("\nEl tamaño ha sido aumentado con éxito.");
+		}else if(nuevoTamanio<edades.length && nuevoTamanio>0) {
+			edades = new int[nuevoTamanio];
+			for (int i = 0; i < edades.length; i++) {
+				edades[i] = aux[i];
+			}
+			System.out.println("\nEl tamaño ha sido disminuido con éxito.");
+		}else {
+			System.out.println("\nERROR   El nuevo tamaño debe ser un número positivo.");
+		}
 	}
 	
 }//class VectorEspecial
