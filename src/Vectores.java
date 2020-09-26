@@ -16,7 +16,7 @@ class VectorEspecial{
 	}
 	public void llenar() {
 		for (int i = 0; i < edades.length; i++) {
-			System.out.print("Ingrese la edad " + (i+1));
+			System.out.println("Ingrese la edad " + (i+1));
 			edades[i] = x.nextInt();
 		}
 	}
@@ -80,8 +80,55 @@ class VectorEspecial{
 }//class VectorEspecial
 public class Vectores {
 	public static void main(String[] args) {
-		
-		
+		Scanner x = new Scanner(System.in);	
+		System.out.println("\n\nPROGRAMA VECTOR ESPECIAL");
+		System.out.println("\nIngrese el tamaño de su vector:");
+		int taman = x.nextInt();
+		VectorEspecial vector = new VectorEspecial(taman);
+		System.out.println("\nPor favor, rellene el vector con edades:");
+		vector.llenar();
+		int elec = 0;
+		while(elec!=9) {
+		System.out.println("\n\nQué desea hacer?\n1.- Obtener cantidad de elementos\n2.- Mostrar todos los elementos\n3.- Mostrar primer elemento\n4.- Mostrar último elemento\n5.- Cambiar tamaño del vector\n6.- Insertar elemento en posicion especifica\n7.- Eliminar elemento en posicion especifica\n8.- Invertir vector\n9.- Finalizar ejecucion");
+		elec = x.nextInt();
+		switch(elec) {
+		case 1:
+			System.out.println("\nEl vector tiene "+vector.obtenerNumElementos()+" elementos");
+			break;
+		case 2:
+			vector.mostarElementos();
+			break;
+		case 3:
+			vector.mostrarElementoInicio();
+			break;
+		case 4:
+			vector.mostrarElementoFinal();
+			break;
+		case 5:
+			System.out.println("\nIngrese un nuevo tamaño para el vector:");
+			int nt = x.nextInt();
+			vector.cambiarTamanio(nt);
+			break;
+		case 6:
+			System.out.println("\nIngrese el elemento:");
+			int elemento = x.nextInt();
+			System.out.println("Ingrese la posicion en la que se ingresará:");
+			int pos = x.nextInt();
+			vector.insertarElemento(pos, elemento);
+			break;
+		case 7:
+			System.out.println("Ingrese la posicion:");
+			int pos2 = x.nextInt();
+			vector.eliminarElemento(pos2);
+			break;
+		case 8:
+			vector.invertirVector();
+			break;
+		default:
+			System.out.println("\nOpcion no valida");
+			break;
+		}
+		}
 
 	}
 }
