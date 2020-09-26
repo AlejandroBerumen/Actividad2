@@ -61,6 +61,21 @@ class VectorEspecial{
 			System.out.println("\nERROR   El nuevo tamaño debe ser un número positivo.");
 		}
 	}
+	public void insertarElemento(int posicion, int elemento) {
+		edades[posicion] = elemento;
+	}
+	public void eliminarElemento(int posicion){
+		edades[posicion] = 0;
+	}
+	public void invertirVector() {
+		int aux[] = new int[edades.length];
+		for (int i = 0; i < edades.length; i++) {
+			aux[i] = edades[i]; 
+		}
+		for (int i = 0; i < edades.length; i++) {
+			edades[i] = aux[edades.length-(i-1)]; 
+		}
+	}
 	
 }//class VectorEspecial
 public class Vectores {
